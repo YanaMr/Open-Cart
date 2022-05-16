@@ -3,6 +3,8 @@ package pages;
 import org.junit.jupiter.api.Assertions;
 import org.openqa.selenium.By;
 
+import static org.hamcrest.CoreMatchers.containsString;
+import static org.hamcrest.MatcherAssert.assertThat;
 import static utils.DriverHolder.getDriver;
 
 public class RegisterPage {
@@ -18,7 +20,8 @@ public class RegisterPage {
     private static final By CONTINUE_BUTTON_LOCATOR = By.xpath("//input[@value='Continue']");
 
     public RegisterPage checkPageUrlIsCorrect() {
-        Assertions.assertTrue(getDriver().getCurrentUrl().contains("register"), "URLs are not equal");
+//        Assertions.assertTrue(getDriver().getCurrentUrl().contains("register"), "URLs are not equal");
+        assertThat(getDriver().getCurrentUrl(), containsString("register"));
         return this;
     }
 
