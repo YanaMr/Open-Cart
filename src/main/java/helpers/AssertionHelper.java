@@ -16,4 +16,12 @@ public class AssertionHelper {
     public void checkPageUrlIsCorrect(String text) {
         assertThat(getDriver().getCurrentUrl(), containsString(text));
     }
+
+    public void checkTextIsCorrect(By locator, String text) {
+        assertThat(getDriver().findElement(locator).getText(), containsString(text));
+    }
+
+    public void expectedTextIsPresented(By locator, String text) {
+        assertThat(getDriver().findElement(locator).getText(), containsString(text));
+    }
 }

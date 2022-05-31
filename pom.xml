@@ -22,6 +22,7 @@
         <hamcrest.version>2.0.0.0</hamcrest.version>
         <allure.version>2.16.0</allure.version>
         <allure.maven>2.10.0</allure.maven>
+        <ashot.maven>1.5.4</ashot.maven>
     </properties>
     <dependencies>
         <dependency>
@@ -72,11 +73,11 @@
             <scope>test</scope>
         </dependency>
         <dependency>
-            <groupId>org.hamcrest</groupId>
-            <artifactId>java-hamcrest</artifactId>
-            <version>${hamcrest.version}</version>
-            <scope>compile</scope>
+            <groupId>ru.yandex.qatools.ashot</groupId>
+            <artifactId>ashot</artifactId>
+            <version>${ashot.maven}</version>
         </dependency>
+
     </dependencies>
     <build>
         <plugins>

@@ -1,34 +1,23 @@
 package pages;
 
-import helpers.Wait;
 import org.openqa.selenium.By;
 import org.openqa.selenium.WebElement;
 import pojo.ProductData;
 
 import java.util.ArrayList;
 import java.util.List;
+import java.util.concurrent.TimeUnit;
 
 import static org.junit.jupiter.api.Assertions.assertTrue;
 import static utils.DriverHolder.getDriver;
 
 public class ShoppingCartPage {
-    Wait wait = new Wait();
+    public static final By REMOVE_BUTTON_LOCATOR = By.xpath("//button[@type='button'][@data-original-title='Remove']");
     private static final By PRODUCT_NAME_LOCATOR = By.xpath("//div[@class='table-responsive']/table/tbody/TR/td[@class='text-left'][1]/a");
     private static final By PRODUCT_PRICE_LOCATOR = By.xpath("//div[@class='col-sm-4 col-sm-offset-8']/table/tbody/tr[4]/td[@class='text-right'][2]");
     private static final By PRODUCT_AMOUNT_LOCATOR = By.xpath("//div[@class='table-responsive']/table/tbody/tr/td/div/input");
-    //    private static final By CHECKOUT_BUTTON_LOCATOR = By.xpath("//a[@class='btn btn-primary']");
-//    private static final By SHOPPING_CART_LOCATOR = By.xpath("//a[@class='btn btn-primary']");
     private static final By PRODUCT_CONTAINER_LOCATOR = By.xpath("//div[@class='table-responsive']/table[@class='table table-bordered']");
 
-//    public ShoppingCartPage goToShoppingCart() {
-//        getDriver().findElement(SHOPPING_CART_LOCATOR).click();
-//        return this;
-//    }
-//
-//    public ShoppingCartPage checkOut() {
-//        getDriver().findElement(CHECKOUT_BUTTON_LOCATOR).click();
-//        return this;
-//    }
 
     public ShoppingCartPage checkProducts(List<ProductData> expectedProductData) {
         assertTrue(getCartProducts().size() == expectedProductData.size()
@@ -46,5 +35,11 @@ public class ShoppingCartPage {
             products.add(productData);
         }
         return products;
+    }
+
+    public ShoppingCartPage removeItemFromCard() throws InterruptedException {
+        getDriver().findElement(REMOVE_BUTTON_LOCATOR).click();
+        TimeUnit.SECONDS.sleep(2);
+        return this;
     }
 }
