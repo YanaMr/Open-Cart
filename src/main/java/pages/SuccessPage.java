@@ -8,8 +8,7 @@ public class SuccessPage {
 
     private static final By CONTINUE_BUTTON_LOCATOR = By.xpath("//a[@class='btn btn-primary']");
 
-    public SuccessPage navigateTo() {
+    public static void navigateTo() {
         getDriver().findElement(CONTINUE_BUTTON_LOCATOR).click();
-        return this;
     }
 }

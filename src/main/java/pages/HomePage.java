@@ -15,24 +15,23 @@ public class HomePage {
     private static final By PRODUCT_PAGE_LOCATOR = By.xpath("//div[@class='product-thumb']/div/div/h4/a");
     private static final By WISH_LIST_LOCATOR = By.xpath("//a[@title='Wish List (1)']");
 
-    public void navigateToRegisterPage() {
+    public static void navigateToRegisterPage() {
         getDriver().findElement(MY_ACCOUNT_LOCATOR).click();
         getDriver().findElement(REGISTER_LOCATOR).click();
     }
 
-    public void navigateToLoginPage() {
+    public static void navigateToLoginPage() {
         getDriver().findElement(MY_ACCOUNT_LOCATOR).click();
         getDriver().findElement(LOGIN_LOCATOR).click();
     }
 
-    public void navigateToWishList() {
+    public static void navigateToWishList() {
         getDriver().findElement(WISH_LIST_LOCATOR).click();
     }
 
-    public HomePage searchForProduct(String item) {
+    public static void searchForProduct(String item) {
         getDriver().findElement(SEARCH_LOCATOR).sendKeys(item);
         getDriver().findElement(SEARCH_BUTTON_LOCATOR).click();
         getDriver().findElement(PRODUCT_PAGE_LOCATOR).click();
-        return this;
     }
 }

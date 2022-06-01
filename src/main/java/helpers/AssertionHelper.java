@@ -8,20 +8,20 @@ import static utils.DriverHolder.getDriver;
 
 public class AssertionHelper {
 
-    public void checkPageIsCorrect(String urlContains, By locator, String containsText) {
+    public static void checkPageIsCorrect(String urlContains, By locator, String containsText) {
         assertThat(getDriver().getCurrentUrl(), containsString(urlContains));
         assertThat(getDriver().findElement(locator).getText(), containsString(containsText));
     }
 
-    public void checkPageUrlIsCorrect(String text) {
+    public static void checkPageUrlIsCorrect(String text) {
         assertThat(getDriver().getCurrentUrl(), containsString(text));
     }
 
-    public void checkTextIsCorrect(By locator, String text) {
+    public static void checkTextIsCorrect(By locator, String text) {
         assertThat(getDriver().findElement(locator).getText(), containsString(text));
     }
 
-    public void expectedTextIsPresented(By locator, String text) {
+    public static void expectedTextIsPresented(By locator, String text) {
         assertThat(getDriver().findElement(locator).getText(), containsString(text));
     }
 }

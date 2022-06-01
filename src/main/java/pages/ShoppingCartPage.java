@@ -25,7 +25,7 @@ public class ShoppingCartPage {
         return this;
     }
 
-    public List<ProductData> getCartProducts() {
+    public static List<ProductData> getCartProducts() {
         List<ProductData> products = new ArrayList<>();
         for (WebElement element : getDriver().findElements(PRODUCT_CONTAINER_LOCATOR)) {
             ProductData productData = new ProductData();
@@ -37,9 +37,8 @@ public class ShoppingCartPage {
         return products;
     }
 
-    public ShoppingCartPage removeItemFromCard() throws InterruptedException {
+    public static void removeItemFromCard() throws InterruptedException {
         getDriver().findElement(REMOVE_BUTTON_LOCATOR).click();
         TimeUnit.SECONDS.sleep(2);
-        return this;
     }
 }

@@ -29,8 +29,7 @@ public class SearchPage {
         return this;
     }
 
-    public SearchPage addItemToWishList() {
+    public static void addItemToWishList() {
         getDriver().findElement(WISH_LIST_LOCATOR).click();
-        return this;
     }
 }
