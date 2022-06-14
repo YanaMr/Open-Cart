@@ -7,14 +7,11 @@ import pojo.ProductData;
 import static utils.Constants.ITEM;
 
 public class AddItemToCartHelper {
-    private static final HomePage homePage = new HomePage();
     private static final ProductPage productPage = new ProductPage();
 
 
     public static ProductData addProductToCart(String item) {
-        homePage
-                .searchForProduct(item);
-//                .goToProductPage();
+        HomePage.searchForProduct(item);
         ProductData productData = new ProductData();
         productData.setProductName(productPage.getProductName());
         productData.setProductAmount(productPage.getProductAmount());

@@ -100,4 +100,20 @@ public class Steps {
         ShoppingCartPage.removeItemFromCard();
         AssertionHelper.expectedTextIsPresented(EMPTY_CART_TEXT_LOCATOR, EMPTY_CART_TEXT_CONTAINS);
     }
+
+    @Then("^User inserts invalid email$")
+    public void insertInvalidEmail() {
+        LoginPage.insertCustomerData(INVALID_EMAIL, PASSWORD);
+    }
+
+    @And("^User received Error message$")
+    public void userReceivedErrorMessage() {
+        AssertionHelper.checkTextIsCorrect(NO_MATCH_EMAIL_PASSWORD_TEXT_LOCATOR, NO_MATCH_EMAIL_PASSWORD_TEXT_CONTAINS);
+    }
+
+    @Then("User inserts valid Email and invalid Password")
+    public void userInsertsValidEmailAndInvalidPassword() {
+        LoginPage.insertCustomerData(EMAIL, INVALID_PASSWORD);
+    }
 }
+

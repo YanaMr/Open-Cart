@@ -1,3 +1,4 @@
+@Register
 Feature: Checking register feature
 
   Scenario: Register with valid data

@@ -1,3 +1,4 @@
+@WishList
 Feature: Adding item to Wish List feature
 
   Scenario: Adding item to Wish List

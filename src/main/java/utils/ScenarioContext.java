@@ -9,13 +9,13 @@ import java.util.Map;
 
 public class ScenarioContext {
 
-    private Map<String, Object> scenarioContext;
+    private final Map<String, Object> scenarioContext;
 
     public ScenarioContext() {
         scenarioContext = new HashMap<>();
     }
 
-    public void setContext(Context key, Object value) {
+    public void setContext(Context key, List<ProductData> value) {
         scenarioContext.put(key.toString(), value);
     }
 

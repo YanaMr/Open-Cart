@@ -1,3 +1,4 @@
+@Cart
 Feature: Removing item from Cart feature
 
   Scenario: Removing item from cart

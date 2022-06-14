@@ -14,16 +14,16 @@
         <project.reporting.outputEncoding>UTF-8</project.reporting.outputEncoding>
         <!-- Components versions -->
         <selenium.version>4.2.1</selenium.version>
-        <junit.version>5.9.0-M1</junit.version>
+        <junit.version>5.8.2</junit.version>
         <webdrivermanager.version>5.2.0</webdrivermanager.version>
-        <maven.compiler.version>3.10.1</maven.compiler.version>
-        <maven.surefire.version>3.0.0-M6</maven.surefire.version>
+        <maven.compiler.version>3.8.1</maven.compiler.version>
+        <maven.surefire.version>2.7.2</maven.surefire.version>
         <log4j.version>2.17.2</log4j.version>
         <hamcrest.version>2.0.0.0</hamcrest.version>
-        <allure.version>2.18.0</allure.version>
+        <allure.version>2.16.0</allure.version>
         <allure.maven>2.10.0</allure.maven>
         <ashot.maven>1.5.4</ashot.maven>
-        <cucumber.version>7.3.4</cucumber.version>
+        <cucumber.version>4.8.1</cucumber.version>
     </properties>
     <dependencies>
         <dependency>
@@ -91,7 +91,6 @@
             <groupId>io.cucumber</groupId>
             <artifactId>cucumber-junit</artifactId>
             <version>${cucumber.version}</version>
-            <scope>test</scope>
         </dependency>
         <dependency>
             <groupId>io.cucumber</groupId>

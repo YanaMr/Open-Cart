@@ -1,3 +1,4 @@
+@Cart
 Feature: Adding item to Cart feature
 
   Scenario: Adding item to Cart
